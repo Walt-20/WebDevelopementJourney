@@ -1,0 +1,81 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.custom-menu {
+    padding: 0.75rem; /* equivalent to p-3 in Tailwind CSS */
+    border-bottom: 1px solid #ffffff; /* equivalent to divide-y divide-solid */
+    background-color: #ffffff; /* equivalent to bg-white */
+}
+
+.custom-menu-item {
+    padding-bottom: 0.75rem; /* equivalent to pb-3 in Tailwind CSS */
+    display: flex;
+    justify-content: space-between; /* equivalent to flex justify-between */
+    align-items: center; /* equivalent to items-center */
+}
+
+.custom-menu-item span {
+    margin-right: 1rem; /* equivalent to mr-16 in Tailwind CSS */
+}
+
+.custom-menu-item .spacer {
+    flex-grow: 1; /* equivalent to spacer class in Tailwind CSS */
+}
+
+.custom-menu-item a {
+    text-decoration: none; /* Remove the underline from the link */
+    color: #000000; /* Define the text color for the link */
+}
+
+/* Style the outer <div> */
+.custom-container {
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Style the text "Keyboard x 1" */
+  .custom-text {
+    margin-right: 1rem; /* Add margin to create spacing */
+  }
+  
+  /* Style the price with currency formatting */
+  .custom-price {
+    font-weight: bold;
+    color: #000000; /* Set the color to blue (adjust as needed) */
+  }
+
+.custom-total {
+    border-top: 1px solid #ccc;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+}
+  
+/* Style the clear button */
+.button-clear {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%; /* Make it rounded */
+    background-color: red; /* Set the background color as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Add a pointer cursor for usability */
+}
+
+/* Style the cart button */
+.button-cart {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%; /* Make it rounded */
+    background-color: rgb(17, 148, 60); /* Set the background color as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Add a pointer cursor for usability */
+}
+  
+  
+   
