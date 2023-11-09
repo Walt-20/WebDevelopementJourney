@@ -1,0 +1,26 @@
+<mat-toolbar>
+    <a routerLink="home" style="text-decoration: none; color: inherit;">
+        <button style="background: none; border: none; padding: 0; margin: 0; cursor: pointer; font-size: 16px; font-weight: bold;">
+            Store
+        </button>
+    </a>
+    <span style="flex: 1 1 auto;"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" style="border-radius: 50%">
+        <mat-icon
+            [matBadge]="1"
+            matBadgeColor="warn"   
+        >shopping_cart
+        </mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <div style="padding: 10px; display: flex; align-items: center;">
+            <div style="flex: 1 1 auto;">
+                <span>1 Item</span>
+            </div>
+            <div>
+                <a routerLink="cart">View Cart</a>
+            </div>
+        </div>
+        <!-- Add more menu items as needed -->
+    </mat-menu>
+</mat-toolbar>
