@@ -5,7 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-products',
+  selector: 'app-products-header',
   standalone: true,
   imports: [
     CommonModule,
@@ -13,10 +13,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatMenuModule,
     MatIconModule
   ],
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.css'
+  templateUrl: './products-header.component.html',
+  styleUrl: './products-header.component.css'
 })
-export class ProductsComponent {
+export class ProductsHeaderComponent {
   @Output() columnsCountChange = new EventEmitter<number>();
   sort = "desc";
   itemsShowCount = 12;
