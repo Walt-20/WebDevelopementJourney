@@ -1,0 +1,26 @@
+<mat-card [ngStyle]="{'text-align': fullWidthMode ? 'initial' : 'center'}">
+    <div [ngStyle]="{'display': fullWidthMode ? 'flex' : ''}">
+      <img style="margin-bottom: 0.25rem; margin-left: auto; margin-right: auto;"
+           [ngStyle]="{'height': fullWidthMode ? '360px' : '200px'}"
+           src="https://via.placeholder.com/150"
+           alt="Placeholder Image"
+      />
+      <div [ngStyle]="{'width': fullWidthMode ? '100%' : 'auto',
+                      'padding-left': fullWidthMode ? '2rem' : '0',
+                      'padding-right': fullWidthMode ? '2rem' : '0',
+                      'display': fullWidthMode ? 'flex' : 'block',
+                      'flex-direction': fullWidthMode ? 'column' : 'initial',
+                      'justify-content': fullWidthMode ? 'space-between' : 'initial'
+                     }">
+        <mat-card-title>Shoes</mat-card-title>
+        <mat-card-subtitle *ngIf="fullWidthMode">Description</mat-card-subtitle>
+        <mat-card-actions style="margin-left: auto; display: flex; justify-content: space-between;">
+          <span>{{ '150' | currency }}</span>
+          <button style="background: none; border: none; cursor: pointer;">
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+        </mat-card-actions>
+      </div>
+    </div>
+  </mat-card>
+  
