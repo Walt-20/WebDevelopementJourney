@@ -1,0 +1,12 @@
+<mat-card style="margin-bottom: 1rem;">
+    <div style="display: flex; justify-content: space-between;">
+        <button mat-button [matMenuTriggerFor]="sortByMenu" style="background: none; border: none; cursor: pointer; padding: 0.75rem;">
+            Sort by {{sort}}
+        </button>
+        <mat-menu #sortByMenu="matMenu">
+            <button (click)="onSortUpdate('desc')" mat-menu-item>desc</button>
+            <button (click)="onSortUpdate('asc')" mat-menu-item>asc</button>
+        </mat-menu>
+    </div>
+
+</mat-card>
