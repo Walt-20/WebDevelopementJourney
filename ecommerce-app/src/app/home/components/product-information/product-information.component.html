@@ -6,13 +6,13 @@
          alt="Placeholder Image"
     />
     <div [ngStyle]="{'width': fullWidthMode ? '100%' : 'auto',
-                    'padding-left': fullWidthMode ? '2rem' : '0',
-                    'padding-right': fullWidthMode ? '2rem' : '0',
+                    'padding-left': fullWidthMode ? '1rem' : '0',
+                    'padding-right': fullWidthMode ? '1rem' : '0',
                     'display': fullWidthMode ? 'flex' : 'block',
                     'flex-direction': fullWidthMode ? 'column' : 'initial',
                     'justify-content': fullWidthMode ? 'space-between' : 'initial'
                    }">
-      <mat-card-title>Shoes</mat-card-title>
+      <mat-card-title [ngStyle]="{'padding-top': fullWidthMode ? '1rem' : '0'}">Shoes</mat-card-title>
       <mat-card-subtitle *ngIf="fullWidthMode">Description</mat-card-subtitle>
       <mat-card-actions style="margin-left: auto; display: flex; justify-content: space-between;">
         <span>{{ '150' | currency }}</span>
