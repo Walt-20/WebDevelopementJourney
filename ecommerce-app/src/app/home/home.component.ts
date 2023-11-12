@@ -5,6 +5,8 @@ import { ProductsHeaderComponent } from './components/products-header/products-h
 import { FiltersComponent } from './components/filters/filters.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ProductInformationComponent } from './components/product-information/product-information.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 
 const ROWS_HEIGHT: { [id:number]: number } = { 1: 400, 3: 335, 4: 350 }
@@ -17,7 +19,9 @@ const ROWS_HEIGHT: { [id:number]: number } = { 1: 400, 3: 335, 4: 350 }
     ProductsHeaderComponent,
     FiltersComponent,
     MatGridListModule,
-    ProductInformationComponent
+    ProductInformationComponent,
+    MatIconModule,
+    MatCardModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
