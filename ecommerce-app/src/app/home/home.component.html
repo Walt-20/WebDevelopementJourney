@@ -1,0 +1,13 @@
+<mat-drawer-container 
+    [autosize]="true"
+    style="min-height: 100vh; max-width: 80rem; margin-left: auto; margin-right: auto; border-left: 1px solid; border-right: 1px solid;">
+
+    <mat-drawer mode="side" opened style="padding: 1.5rem;">
+        <app-filters (showCategory)="onShowCategory($event)"></app-filters>
+    </mat-drawer>
+    <mat-drawer-content style="padding: 1.5rem;">
+        <app-products-header (columnsCountChange)="onColumnsCountChange($event)"></app-products-header>
+        {{category}}
+    </mat-drawer-content>
+
+</mat-drawer-container>
