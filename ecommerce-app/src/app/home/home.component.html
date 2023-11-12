@@ -7,7 +7,14 @@
     </mat-drawer>
     <mat-drawer-content style="padding: 1.5rem;">
         <app-products-header (columnsCountChange)="onColumnsCountChange($event)"></app-products-header>
-        {{category}}
+        <mat-grid-list
+            gutterSize="16"
+            [cols]="cols"
+            [rowHeight]="rowHeight">
+            <mat-grid-title>
+                <app-product-information></app-product-information>
+            </mat-grid-title>
+        </mat-grid-list>
     </mat-drawer-content>
 
 </mat-drawer-container>
