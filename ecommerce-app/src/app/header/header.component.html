@@ -1,9 +1,9 @@
 <mat-toolbar style="display: flex; justify-content: space-between; padding: 1rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 0; border-right-width: 0;">
-    <a routerLink="home" style="text-decoration: none; color: inherit;">
-        <button style="background: none; border: none; padding: 0; margin: 0; cursor: pointer; font-size: 16px; font-weight: bold;">
+    <button style="text-decoration: none; color: inherit;">
+        <mat-icon (click)="goToHome()" style="background: none; border: none; padding: 0; margin: 0; cursor: pointer; font-size: 16px; font-weight: bold;">
             Store
-        </button>
-    </a>
+        </mat-icon>
+    </button>
     <span style="flex: 1 1 auto;"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu" style="background: none; border: none; cursor: pointer;">
         <mat-icon
@@ -53,7 +53,7 @@
                 <button 
                     routerLink="cart" 
                     style="background-color: green; border: none; border-radius: 50%; padding: 10px; cursor: pointer;">
-                    <mat-icon>shopping_cart</mat-icon>
+                    <mat-icon (click)="goToCart()">shopping_cart</mat-icon>
                 </button>
             </div>
         </div>
