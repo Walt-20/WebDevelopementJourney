@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatBadgeModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
@@ -24,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class HeaderComponent {
 
   constructor(private router: Router) { }
+  
   goToCart() {
     this.router.navigate(['/cart']);
   }

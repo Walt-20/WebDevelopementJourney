@@ -4,7 +4,8 @@ import { Cart, CartItem } from '../models/cart.model';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -14,12 +15,14 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatButtonModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
   ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
+
+  constructor(private router: Router) { }
 
   cart: Cart = { items: [
     {
@@ -55,4 +58,7 @@ export class CartComponent {
     return items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
   }
 
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
 }
