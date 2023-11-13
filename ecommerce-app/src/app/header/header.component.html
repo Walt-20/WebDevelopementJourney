@@ -13,12 +13,12 @@
         </mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between;">
+        <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; align-items: center;">
             <div>
                 <span style="margin-right: 4rem;">1 Item</span>
             </div>
             <div>
-                <a routerLink="cart">View Cart</a>
+                <button mat-raised-button (click)="goToCart()">View Cart</button>
             </div>
         </div>
         <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; font-weight: lighter; margin-bottom: 0.5rem;">
