@@ -65,4 +65,12 @@ export class CartComponent {
   goToHome() {
     this.router.navigate(['/home']);
   }
+
+  onClearCart(): void {
+    this.cartService.clearCart();
+  }
+
+  onRemoveFromCart(item: CartItem): void {
+    this.cartService.removeFromCart(item);
+  }
 }
