@@ -16,7 +16,7 @@
       <mat-card-subtitle *ngIf="fullWidthMode">Description</mat-card-subtitle>
       <mat-card-actions style="margin-left: auto; display: flex; justify-content: space-between;">
         <span>{{ '150' | currency }}</span>
-        <button style="background: none; border: none; cursor: pointer;">
+        <button (click)="onAddToCart()" style="background: none; border: none; cursor: pointer;">
           <mat-icon>shopping_cart</mat-icon>
         </button>
       </mat-card-actions>

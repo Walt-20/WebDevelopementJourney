@@ -4,7 +4,8 @@
     <span style="flex: 1 1 auto;"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu" style="background: none; border: none; cursor: pointer;">
         <mat-icon
-            [matBadge]="1"
+            [matBadge]="itemsQuantity"
+            [matBadgeHidden]="!itemsQuantity"
             matBadgeColor="warn"   
         >shopping_cart
         </mat-icon>
@@ -12,39 +13,29 @@
     <mat-menu #menu="matMenu">
         <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <span style="margin-right: 4rem;">1 Item</span>
+                <span style="margin-right: 4rem;">{{ itemsQuantity }} Item</span>
             </div>
             <div>
                 <button mat-raised-button (click)="goToCart()">View Cart</button>
             </div>
         </div>
-        <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; font-weight: lighter; margin-bottom: 0.5rem;">
-            <div style="display: flex; justify-content: space-between; width: 100%;">
-                <div>Keyboard x 1</div>
-                <span style="font-weight: bold;">{{ '150' | currency }}</span>
-            </div>
-        </div>
-        <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; font-weight: lighter; margin-bottom: 0.5rem;">
-            <div style="display: flex; justify-content: space-between; width: 100%;">
-                <div>Keyboard x 1</div>
-                <span style="font-weight: bold;">{{ '150' | currency }}</span>
-            </div>
-        </div>
-        <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; font-weight: lighter; margin-bottom: 0.5rem;">
-            <div style="display: flex; justify-content: space-between; width: 100%;">
-                <div>Keyboard x 1</div>
-                <span style="font-weight: bold;">{{ '150' | currency }}</span>
+        <div *ngIf="cart.items.length" style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; font-weight: lighter; margin-bottom: 0.5rem;">
+            <div 
+                *ngFor="let item of cart.items"
+                style="display: flex; justify-content: space-between; width: 100%;">
+                <div>{{item.name}} x {{item.quantity}}</div>
+                <span style="font-weight: bold;">{{ item.price | currency }}</span>
             </div>
         </div>
         <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-top: solid; display: flex; justify-content: space-between; font-weight: lighter; margin-bottom: 0.5rem;">
             <div style="display: flex; justify-content: space-between; width: 100%;">
                 <div>Total</div>
-                <span style="font-weight: bold;">{{ '450' | currency }}</span>
+                <span style="font-weight: bold;">{{ getTotal(cart.items) | currency }}</span>
             </div>
         </div>
         <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; font-weight: lighter; margin-bottom: 0.5rem;">
             <div style="display: flex; justify-content: space-between; width: 100%;">
-                <button style="background-color: red; border: none; border-radius: 50%; padding: 10px; margin-right: 10px; cursor: pointer;">
+                <button (click)="onClearCart()" style="background-color: red; border: none; border-radius: 50%; padding: 10px; margin-right: 10px; cursor: pointer;">
                     <mat-icon>remove_shopping_cart</mat-icon>
                 </button>
                 <button 

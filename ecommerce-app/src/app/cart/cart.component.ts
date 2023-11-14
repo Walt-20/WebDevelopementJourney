@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -22,7 +23,7 @@ import { Router } from '@angular/router';
 })
 export class CartComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cartService: CartService) { }
 
   cart: Cart = { items: [
     {
@@ -51,11 +52,14 @@ export class CartComponent {
   ];
 
   ngOnInit() {
-    this.dataSource = this.cart.items;
+    this.cartService.cart.subscribe((_cart: Cart) => {
+      this.cart = _cart
+      this.dataSource = this.cart.items;
+    })
   }
 
   getTotal(items: Array<CartItem>): number {
-    return items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
+    return this.cartService.getTotal(items);
   }
 
   goToHome() {
