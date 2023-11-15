@@ -17,14 +17,7 @@ import { Product } from '../../../models/product.model';
 })
 export class ProductInformationComponent {
   @Input() fullWidthMode = false;
-  product: Product | undefined = {
-    id: 1,
-    title: 'Sneakers',
-    price: 150,
-    category: 'Shoes',
-    description: 'Description',
-    image: 'https://via.placeholder.com/150',
-  };
+  @Input() product: Product | undefined
   @Output() addToCart = new EventEmitter();
 
   onAddToCart(): void {

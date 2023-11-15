@@ -5,6 +5,8 @@ import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Cart } from './models/cart.model';
 import { CartService } from './services/cart.service';
+import { StoreService } from './services/store.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +19,8 @@ import { CartService } from './services/cart.service';
     RouterModule,
     RouterOutlet, 
     RouterLink, 
-    RouterLinkActive
+    RouterLinkActive,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
