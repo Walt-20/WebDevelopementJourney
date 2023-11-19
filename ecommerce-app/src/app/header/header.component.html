@@ -22,7 +22,7 @@
         <div *ngIf="cart.items.length" style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; flex-direction: column; justify-content: space-between; font-weight: lighter; margin-bottom: 0.5rem;">
             <div 
                 *ngFor="let item of cart.items"
-                style="display: flex; justify-content: space-between; width: 100%;">
+                style="display: flex; justify-content: space-between; width: 100%; padding-top: 0.75rem; padding-bottom: 0.75rem;">
                 <div>{{item.name}} x {{item.quantity}}</div>
                 <span style="font-weight: bold;">{{ item.price | currency }}</span>
             </div>
