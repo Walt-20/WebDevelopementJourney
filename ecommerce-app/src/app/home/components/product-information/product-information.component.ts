@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { Product } from '../../../models/product.model';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-product-information',
@@ -10,7 +11,8 @@ import { Product } from '../../../models/product.model';
   imports: [
     CommonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   templateUrl: './product-information.component.html',
   styleUrl: './product-information.component.css'
