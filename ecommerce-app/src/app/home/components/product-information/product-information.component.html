@@ -1,48 +1,10 @@
-<!-- <mat-card *ngIf="product" [ngStyle]="{'text-align': fullWidthMode ? 'initial' : 'center',
-                                      'height' : fullWidthMode ? '600px' : '300px'}">
-  <div [ngStyle]="{'display': fullWidthMode ? 'flex' : ''}">
-    <img style="margin: 0.25rem; max-width: auto;"
-         [ngStyle]="{'height': fullWidthMode ? '300px' : '150px'}"
-         [src]="product.image"
-         alt="Placeholder Image"
-    />
-    <div [ngStyle]="{'width': fullWidthMode ? '100%' : 'auto',
-                    'padding-left': fullWidthMode ? '1rem' : '0',
-                    'padding-right': fullWidthMode ? '1rem' : '0',
-                    'display': fullWidthMode ? 'flex' : 'block',
-                    'flex-direction': fullWidthMode ? 'column' : 'initial',
-                    'justify-content': fullWidthMode ? 'space-between' : 'initial',
-                    'box-sizing': 'border-box',
-                    'overflow': 'hidden'
-                   }">
-      <mat-card-subtitle [ngStyle]="{'padding-top': fullWidthMode ? '1rem' : '0',
-                                      'overflow': 'hidden',
-                                      'text-overflow': 'ellipsis',
-                                      'white-space': 'nowrap'
-      }">{{ product.category }}</mat-card-subtitle>
-      <mat-card-title [ngStyle]="{'padding-top': fullWidthMode ? '1rem' : '0', 
-      'overflow' : 'hidden',
-      'text-overflow' : 'ellipsis'}">{{ product.title }}</mat-card-title>
-      <mat-card-subtitle *ngIf="fullWidthMode">{{ product.description }}</mat-card-subtitle>
-      <mat-card-subtitle></mat-card-subtitle>
-      <mat-card-actions style="margin-left: auto; display: flex; justify-content: space-between;padding-bottom: 1rem;">
-        <span>{{ product.price | currency }}</span>
-        <button mat-raised-button color="primary" (click)="onAddToCart()">
-          Add to Cart
-        </button>
-      </mat-card-actions>
-    </div>
-  </div>
-</mat-card> -->
-
 <mat-card *ngIf="product" [ngStyle]="{
-  'text-align' : fullWidthMode ? 'initial' : 'center',
+  'text-align' : 'center',
 }">
-  <div [ngStyle]="{
-      'display' : fullWidthMode ? 'flex' : ''
-    }">
+  <div>
     <img mat-card-image [ngStyle]="{
-      'height' : fullWidthMode? '300px' : '150px',
+      'height' : '150px',
+      'width' : '150px',
       'margin' : '0.25rem',
       'padding-top' : '0.75rem'
       }" 
