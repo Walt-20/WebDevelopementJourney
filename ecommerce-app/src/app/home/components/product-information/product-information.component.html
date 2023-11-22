@@ -35,20 +35,37 @@
   </div>
 </mat-card> -->
 
-<mat-card *ngIf="product">
-  <img mat-card-image [ngStyle]="{'height' : fullWidthMode? '300px' : '150px'}" [src]="product.image" alt="Placeholder image" />
-  <mat-card-content>
-    <mat-card-subtitle [ngStyle]="{
-      'overflow' : 'hidden',
-      'text-overflow' : 'ellipsis',
-      'white-space' : 'nowrap'
+<mat-card *ngIf="product" [ngStyle]="{
+  'text-align' : fullWidthMode ? 'initial' : 'center',
+}">
+  <div [ngStyle]="{
+      'display' : fullWidthMode ? 'flex' : ''
     }">
-      {{ product.title }}
-    </mat-card-subtitle>
-  </mat-card-content>
-  <mat-card-actions [ngStyle]="{'justify-content' : 'space-between'}">
-    <span>{{ product.price  | currency }}</span>
-    <button mat-flat-button>Add to Cart</button>
-  </mat-card-actions>
+    <img mat-card-image [ngStyle]="{
+      'height' : fullWidthMode? '300px' : '150px',
+      'margin' : '0.25rem',
+      'padding-top' : '0.75rem'
+      }" 
+      [src]="product.image" 
+      alt="Placeholder image" />
+    <mat-card-content>
+      <mat-card-subtitle [ngStyle]="{
+        'overflow' : 'hidden',
+        'text-overflow' : 'ellipsis',
+        'white-space' : 'nowrap',
+        'width' : '100%',
+        'padding-bottom' : '0.75rem'
+      }">
+        {{ product.title }}
+      </mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions [ngStyle]="{
+      'justify-content' : 'space-between',
+      'flex-direction' : 'padding-right'
+    }">
+      <span>{{ product.price  | currency }}</span>
+      <button mat-flat-button (click)="onAddToCart()">Add to Cart</button>
+    </mat-card-actions>
+  </div>
 </mat-card>
 
