@@ -2,12 +2,12 @@
   <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
           <button mat-button [matMenuTriggerFor]="sortByMenu" style="background: none; border: none; cursor: pointer; padding: 0.75rem; font-size: large;">
-              Sort by {{sort}}
+              Sort by Price
               <mat-icon style="vertical-align: middle;">expand_more</mat-icon>
           </button>
           <mat-menu #sortByMenu="matMenu">
-              <button (click)="onSortUpdate('desc')" mat-menu-item>desc</button>
-              <button (click)="onSortUpdate('asc')" mat-menu-item>asc</button>
+              <button (click)="onSortUpdate('high')" mat-menu-item>Price High to Low</button>
+              <button (click)="onSortUpdate('low')" mat-menu-item>Price Low to High</button>
           </mat-menu>
       </div>
       <div style="display: flex; align-items: center;">
