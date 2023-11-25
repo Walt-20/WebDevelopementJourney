@@ -13,6 +13,10 @@ export class StoreService {
 
   getAllProducts(limit = '12', sort = 'high', category?: string): Observable<Array<Product>> {
 
+    if (category === 'All') {
+      category = undefined;
+    }
+
     // return this.httpClient.request<Array<Product>>('GET', STORE_BASE_URL + '?' + 'sort=' + sort + '&limit=' + limit);
     return this.httpClient.get<Array<Product>>(
       `${this.url}/products${
