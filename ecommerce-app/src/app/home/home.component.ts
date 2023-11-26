@@ -12,6 +12,7 @@ import { Product } from '../models/product.model';
 import { Subscription } from 'rxjs';
 import { StoreService } from '../services/store.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from '../footer/footer.component';
 
 
 const ROWS_HEIGHT: { [id:number]: number } = { 1: 400, 3: 335, 4: 350 }
@@ -28,6 +29,7 @@ const ROWS_HEIGHT: { [id:number]: number } = { 1: 400, 3: 335, 4: 350 }
     MatIconModule,
     MatCardModule,
     HttpClientModule,
+    FooterComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
