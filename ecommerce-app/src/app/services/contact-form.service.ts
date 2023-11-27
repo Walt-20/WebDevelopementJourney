@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,9 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class ContactFormService {
 
-  constructor() { }
+  private serverUrl = "http://localhost:5000";
+
+  constructor(private http: HttpClient) { }
 
   submitContact(firstName: string, lastName: string, email: string, message: string) {
-    console.log(firstName, lastName, email, message);
+    const formData = { firstName, lastName, email, message };
+    return this.http.post(`${this.serverUrl}/api/contact`, formData);
   }
 }
