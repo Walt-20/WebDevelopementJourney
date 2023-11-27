@@ -5,7 +5,7 @@ I am using this tutorial to understand how to put together an ecommerce store, a
 https://youtu.be/Kbauf9IgsC4?si=hKzwGe9--02Z7iFB
 
 # HOME pag
-![HOME page](https://imgur.com/a/J3UXT5R)
+![HOME page](/ecommerce-app/assets/Screenshot from 2023-11-27 07-12-55.png)
 
 # CART page
 ![CART page](https://imgur.com/7B4YEiL)
