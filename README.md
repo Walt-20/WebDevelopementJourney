@@ -12,3 +12,6 @@ this store was implemented using json from https://fakestoreapi.com/
 
 # CART page
 ![CART page](cart.png)
+
+# CONTACT footer
+![CONTACT footer](contact.png)
