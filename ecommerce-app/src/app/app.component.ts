@@ -7,7 +7,7 @@ import { Cart } from './models/cart.model';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FooterComponent } from './footer/footer.component'
+import { ContactComponent } from './contact/contact.component'
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,7 @@ import { FooterComponent } from './footer/footer.component'
     CommonModule, 
     RouterOutlet,
     HeaderComponent,
-    FooterComponent,
+    ContactComponent,
     MatToolbarModule,
     RouterModule,
     RouterOutlet, 

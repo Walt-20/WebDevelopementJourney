@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-contact',
   standalone: true,
   imports: [
     CommonModule,
@@ -17,10 +17,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatButtonModule
   ],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.css'
 })
-export class FooterComponent {
+export class ContactComponent {
 
   serverRes: string = '';
 
