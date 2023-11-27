@@ -4,8 +4,11 @@ I am using this tutorial to understand how to put together an ecommerce store, a
 
 https://youtu.be/Kbauf9IgsC4?si=hKzwGe9--02Z7iFB
 
+# FakeStoreAPI
+this store was implemented using json from https://fakestoreapi.com/
+
 # HOME pag
-![HOME page](/ecommerce-app/assets/Screenshot from 2023-11-27 07-12-55.png)
+![HOME page](home.png)
 
 # CART page
-![CART page](https://imgur.com/7B4YEiL)
+![CART page](cart.png)
