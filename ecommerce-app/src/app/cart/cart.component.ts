@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 import { HttpClient } from '@angular/common/http';
 import { loadStripe } from '@stripe/stripe-js';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -89,7 +89,7 @@ export class CartComponent {
     this.http.post('http://localhost:4242/checkout', {
       items: this.cart.items
     }).subscribe(async(res: any) => {
-      let stripe = await loadStripe(environment.publicKey);
+      let stripe = await loadStripe(environment.STRIPE_PRIVATEKEY);
       stripe?.redirectToCheckout({
         sessionId: res.id
       })
