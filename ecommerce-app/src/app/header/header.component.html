@@ -10,6 +10,9 @@
         >shopping_cart
         </mat-icon>
     </button>
+    <button mat-icon-button [matMenuTriggerFor]="account" style="background: none; border: none; cursor: pointer;">
+        <mat-icon>account_circle</mat-icon>
+    </button>
     <mat-menu #menu="matMenu">
         <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; align-items: center;">
             <div>
@@ -33,6 +36,11 @@
                 <span style="font-weight: bold;">{{ getTotal(cart.items) | currency }}</span>
             </div>
         </div>
-        <!-- Add more menu items as needed -->
+    </mat-menu>
+    <mat-menu #account="matMenu">
+        <div style="padding: 0.75rem; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-width: 1px; border-style: none; display: flex; justify-content: space-between; align-items: center;">
+            <button mat-menu-item (click)="goToLogin()">Login</button>
+            <button mat-menu-item (click)="goToRegister()">Register</button>
+        </div>
     </mat-menu>
 </mat-toolbar>

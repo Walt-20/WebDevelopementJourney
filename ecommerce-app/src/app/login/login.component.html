@@ -1,0 +1,23 @@
+<section class="form" style="min-height: 55vh; max-width: 80rem; margin-left: auto; margin-right: auto;">
+    <div style="display: flex; flex-direction: column; align-items: center; padding: 1.0rem;">
+        <h2 class="form-heading" style="margin-bottom: 1rem;">Login</h2>
+        <form [formGroup]="loginForm" (submit)="submitLogin()" style="display: flex; flex-direction: column; align-items: center;">
+            <section *ngIf="serverRes">
+                <p>{{ serverRes }}</p>
+            </section>
+            <mat-form-field style="width: 600px;">
+                <label for="user-name">Username</label>
+                <input matInput id="user-name" formControlName="userName">
+            </mat-form-field>
+
+            <mat-form-field style="width: 600px;">
+                <label for="password">Password</label>
+                <input matInput id="password" formControlName="password">
+            </mat-form-field>
+
+            <button mat-flat-button type="login" class="primary">Login!</button>
+        </form>
+        <button mat-flat-button type="register" class="primary" (click)="goToRegister()">Don't have an account? Register here!</button>
+    </div>
+</section>
+

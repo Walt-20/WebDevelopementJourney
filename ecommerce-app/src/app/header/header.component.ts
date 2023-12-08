@@ -46,6 +46,12 @@ export class HeaderComponent {
   goToHome() {
     this.router.navigate(['/home']);
   }
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
 
   getTotal(items: Array<CartItem>): number {
     return this.cartService.getTotal(items);
