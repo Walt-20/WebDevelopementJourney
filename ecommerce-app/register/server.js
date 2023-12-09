@@ -1,19 +1,23 @@
-import mysql from 'mysql2'
-import dotenv from 'dotenv'
+import mysql from 'mysql2';
+import dotenv from 'dotenv';
 dotenv.config()
 
-const pool = mysql.createPool({
-    host: process.env.MYSQL_HOST,
-    user: 'admin',
-    port: '3306',
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE
+var pool = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'ecommerce_store',
 }).promise()
 
-async function getUsers() {
-    const res = await pool.query('SELECT * FROM User');
-    console.log(res);
+export async function getUsers() {
+    const [rows] = await pool.query('SELECT * FROM Users');
+    return rows;
 }
 
-const users = await getUsers();
-console.log(users);
+export async function registerUser(username, password, email, name) {
+    const [result] = await pool.query(`
+    INSERT INTO Users (username, password, email, name)
+    VALUE (?, ?, ?, ?)
+    `, [username, password, email, name])
+    return result;
+}
