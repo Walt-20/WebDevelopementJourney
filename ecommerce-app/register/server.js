@@ -1,23 +1,16 @@
-import mysql from 'mysql2';
-import dotenv from 'dotenv';
-dotenv.config()
+import express from 'express';
+import bodyParser from 'body-parser';
+import userRoutes from './routes/userRoutes.js';
 
-var pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'ecommerce_store',
-}).promise()
+const app = express();
+const PORT = 3000;
 
-export async function getUsers() {
-    const [rows] = await pool.query('SELECT * FROM Users');
-    return rows;
-}
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static('public'));
 
-export async function registerUser(username, password, email, name) {
-    const [result] = await pool.query(`
-    INSERT INTO Users (username, password, email, name)
-    VALUE (?, ?, ?, ?)
-    `, [username, password, email, name])
-    return result;
-}
+app.use('/users', userRoutes);
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class DatabaseService {
 
-  private databaseHost = "";
+  private databaseHost = "http://localhost:3000";
 
   constructor(private http: HttpClient) { }
 
