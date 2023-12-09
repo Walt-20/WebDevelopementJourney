@@ -1,4 +1,4 @@
-import mysql from 'mysql'
+const mysql = require('mysql');
 
 var pool = mysql.createPool({
     connectionLimit: 10,
@@ -8,4 +8,6 @@ var pool = mysql.createPool({
     database: 'ecommerce_store',
 });
 
-export default pool;
+module.exports = {
+    pool
+}

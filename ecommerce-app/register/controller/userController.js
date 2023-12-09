@@ -1,7 +1,7 @@
-import pool from './db.js';
+const { pool } = require('./db.js');
 
-const register = async (req, res) => {
-    const { username, password, email, name } = req.body;
+const registerUser = async (req, res) => {
+    const { userName, password, email, name } = req.body;
     pool.getConnection((err, connection) => {
         if (err) {
           console.error('Error connecting to MySQL:', err);
@@ -9,7 +9,7 @@ const register = async (req, res) => {
         }
     
         // Check if the user already exists
-        connection.query('SELECT * FROM users WHERE username = ?', [username], (selectErr, results) => {
+        connection.query('SELECT * FROM users WHERE username = ?', [userName], (selectErr, results) => {
           if (selectErr) {
             console.error('Error querying MySQL:', selectErr);
             connection.release();
@@ -22,7 +22,7 @@ const register = async (req, res) => {
           }
     
           // Insert a new user
-          connection.query('INSERT INTO users (username, email) VALUES (?, ?)', [username, email], (insertErr) => {
+          connection.query('INSERT INTO users (username, password, email, name) VALUES (?, ?, ?, ?)', [userName, password, email, name], (insertErr) => {
             connection.release();
     
             if (insertErr) {
@@ -36,4 +36,6 @@ const register = async (req, res) => {
     });
 };
 
-export default { register };
+module.exports = {
+  registerUser
+};

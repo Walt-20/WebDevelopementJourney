@@ -1,6 +1,7 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import userRoutes from './routes/userRoutes.js';
+const express = require('express');
+const bodyParser = require('body-parser');
+const userRoutes = require('./routes/userRoutes.js')
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
@@ -8,6 +9,13 @@ const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+
+app.use(cors({
+    origin: 'http://localhost:4200',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,  // enable set cookie with credentials
+    optionsSuccessStatus: 204,  // respond to preflight requests with 204 (No Content)
+}));
 
 app.use('/users', userRoutes);
 

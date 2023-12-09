@@ -12,11 +12,12 @@ export class DatabaseService {
 
   submitLogin(userName: string, password: string) {
     const formData = { userName, password };
-    return this.http.post(`${this.databaseHost}/api/login`, formData);
+    return this.http.post(`${this.databaseHost}/users/login`, formData);
   }
 
   submitRegister(email: string, name: string, userName: string, password: string) {
+    console.log(userName);
     const formData = { email, name, userName, password };
-    return this.http.post(`${this.databaseHost}/api/register`, formData);
+    return this.http.post(`${this.databaseHost}/users/register`, formData);
   }
 }
