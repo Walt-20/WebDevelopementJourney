@@ -1,8 +1,10 @@
 const router = require('express').Router();
-const { registerUser } = require('../controller/userController.js');
+const { registerUser, loginUser } = require('../controller/userController.js');
 
 try {
     router.post('/register', registerUser);
+
+    router.post('/login', loginUser);
 } catch (err) {
     console.log(err);
 }

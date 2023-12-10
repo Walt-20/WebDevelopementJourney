@@ -36,6 +36,32 @@ const registerUser = async (req, res) => {
     });
 };
 
+const loginUser = async (req, res) => {
+  const { userName, password } = req.body;
+  console.log("DEBUG userController " + userName);
+  pool.getConnection((err, connection) => {
+    if (err) {
+      console.error('Error connecting to MySQL:', err);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+
+    connection.query('SELECT * FROM users WHERE username = ? AND password = ?', [userName, password], (selectErr, results) => {
+      if (selectErr) {
+        console.error('Error querying MySQL:', selectErr);
+        connection.release();
+        return res.status(500).json({ message: 'Internal server error' });
+      }
+
+      if (results.length === 0) {
+        connection.release();
+        return res.status(401).json({ message: 'Invalid username or password' });
+      }
+
+      res.status(200).json({ message: 'User logged in successfully' });
+    });
+  });
+};
+
 module.exports = {
-  registerUser
+  registerUser, loginUser
 };
