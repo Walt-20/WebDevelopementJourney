@@ -38,7 +38,6 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { userName, password } = req.body;
-  console.log("DEBUG userController " + userName);
   pool.getConnection((err, connection) => {
     if (err) {
       console.error('Error connecting to MySQL:', err);

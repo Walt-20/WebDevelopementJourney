@@ -89,7 +89,7 @@ export class CartComponent {
     this.http.post('http://localhost:4242/checkout', {
       items: this.cart.items
     }).subscribe(async(res: any) => {
-      let stripe = await loadStripe(environment.STRIPE_PRIVATEKEY);
+      let stripe = await loadStripe(environment.STRIPE_PUBLISHABLE);
       stripe?.redirectToCheckout({
         sessionId: res.id
       })

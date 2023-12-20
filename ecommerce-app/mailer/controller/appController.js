@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-const { email, password } = require('../../environments/environment.js')
+require('dotenv').config();
 
 const contact = async (req, res) => {
     const { firstName, lastName, fromEmail, message } = req.body;
@@ -10,14 +10,14 @@ const contact = async (req, res) => {
         host: 'smtp.gmail.com',
         port: 587,
         auth: {
-            user: email,
-            pass: password,
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD,
         },
     });
 
     const mailOptions = {
         from: fromEmail,
-        to: email,
+        to: process.env.EMAIL,
         subject: "TEST",
         text: `
             Name: ${firstName} ${lastName}

@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyparser = require("body-parser");
-const environment = require("../environments/environment.js");
+require("dotenv").config();
 
 const app = express();
 app.use(express.static("public"));
@@ -9,7 +9,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(cors({ origin: true, credentials: true }))
 
-const stripe = require("stripe")(environment.privateKey);
+const stripe = require("stripe")(process.env.STRIPE_PUBLICKEY);
 
 app.post("/checkout", async (req, res, next) => {
     try {
